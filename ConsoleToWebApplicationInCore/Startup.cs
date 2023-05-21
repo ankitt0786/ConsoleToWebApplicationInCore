@@ -21,6 +21,7 @@
                 app.UseDeveloperExceptionPage();
             }
 
+
             app.UseRouting();
 
             app.UseEndpoints(endpoints =>
@@ -35,13 +36,13 @@
                 endpoints.MapDefaultControllerRoute();
             });
 
-            app.UseEndpoints(endpoints =>
-            {
-                endpoints.MapGet("/ankit", async context =>
-                {
-                    await context.Response.WriteAsync("Hello Ankit.");
-                });
-            });
+            //app.UseEndpoints(endpoints =>
+            //{
+            //    endpoints.MapGet("/ankit", async context =>
+            //    {
+            //        await context.Response.WriteAsync("Hello Ankit.");
+            //    });
+            //});
         }
     }
 }
