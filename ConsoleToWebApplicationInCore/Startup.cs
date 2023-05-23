@@ -8,6 +8,14 @@
             //use to set up the dependencies like mvc or api or razor pages
 
             services.AddControllersWithViews();
+
+
+            //for runtime debugging while development environment
+            //before add this we have to add nuget package razor.runtimecompiler
+
+#if DEBUG
+            services.AddRazorPages().AddRazorRuntimeCompilation();
+#endif
         }
 
         //this method control the request pipeline with the help of middlewares
@@ -21,6 +29,8 @@
                 app.UseDeveloperExceptionPage();
             }
 
+            //for static files in wwwroot
+            app.UseStaticFiles();
 
             app.UseRouting();
 
